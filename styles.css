@@ -1,0 +1,460 @@
+:root {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    color: white;
+    --color-textshadow: #424242;
+    --color-background: #1c1c1c;
+    --color-block: #151515;
+    --color-color: #003bfd;
+}
+
+html {
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+body {
+    background-color: rgb(18,18,18);
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 4%;
+    background-color: var(--color-block);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-left {
+    display: flex;
+    gap: 2vw;
+}
+.nav-right {
+    display: flex;
+    gap: 2vw;
+}
+
+.nav-left a, .nav-right a {
+    text-decoration: none;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    font-size: 2.5rem;
+    transition: 0.3s ease-in, 0.3s ease-out;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+    color: var(--color-color);
+    scale: 1.05;
+    transition: 0.2s ease-in, transform 0.3s ease-out;
+}
+
+.nav-right a.logout:hover {
+    color: red;
+    scale: 1.05;
+    transition: 0.2s ease-in, transform 0.3s ease-out;
+}
+
+.nav-right a.login:hover {
+    color: #00fb00;
+    scale: 1.05;
+    transition: 0.2s ease-in, transform 0.3s ease-out;
+}
+
+
+@keyframes animace {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    font-size: 12rem;
+    text-shadow: var(--color-textshadow) 5px 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5vw 0;
+    opacity: 0;
+    animation: animace 0.5s ease-out forwards;
+}
+
+h1.mensi {
+  margin-top: 3%;
+  font-size: 7vw;
+}
+
+h1.jestemensi {
+    margin-top: 2%;
+    font-size: 4rem;
+}
+
+
+
+.searchbar {
+    display: flex;
+    width: 70%;
+    max-width: 50%;
+    margin: 0.5vw auto;
+    background: var(--color-background);
+    border-radius: 50px;
+    padding: 8px 10px;
+    box-shadow: 0 3px 2px var(--color-textshadow);
+    animation: animace 0.5s ease-out forwards;
+    transition: 0.3s ease-in, 0.5s ease-out;
+}
+
+.searchbar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 1.5em;
+    background: transparent;
+    color: white;
+    font-family: "Bebas Neue Book", sans-serif;
+    font-weight: 200;
+    text-align: left;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.searchbar input::placeholder {
+    font-size: 1.5em;
+}
+
+::selection {
+    background-color: var(--color-color);
+    color: white;
+}
+
+.searchbar:hover {
+    scale: 1.05;
+    box-shadow: 0 3px 2px var(--color-color);
+    transition: 0.2s ease-in, transform 5s ease-out;
+}
+
+/*PROFIL*/
+.profileselect {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.profile {
+    text-align: center;
+    flex: 1 1 calc(25% - 3rem);
+    max-width: 240px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 35px;
+}
+
+.profile:hover {
+    transform: scale(1.3);
+    background-color: var(--color-block);
+}
+
+.image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10px auto 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.profile:hover p {
+    color: var(--color-color);
+}
+
+
+
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    font-size: 3rem;
+    text-shadow: var(--color-textshadow) 5px 5px 20px;
+    opacity: 0;
+    animation: animace 0.5s ease-out forwards;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+
+/*FILMY*/
+.movieselect {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+
+.movie {
+    text-align: center;
+    flex: 1 1 calc(25% - 3rem);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 35px;
+
+}
+
+.movie:hover {
+    transform: scale(1.2);
+    background-color: var(--color-block);
+}
+
+.movieselect .image-container {
+    width: 280px;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px auto 0;
+}
+
+.movieselect .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie p {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.movie:hover p {
+    color: var(--color-color);
+}
+
+
+/* video */
+.videoplayer {
+    width: 80%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.info {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 0;
+}
+
+
+.nazevdila {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal;
+    font-size: 6rem;
+    text-shadow: var(--color-textshadow) 5px 5px 20px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.popis {
+    margin-top: 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* serial */
+.vyberepizody {
+    text-align: center;
+    margin: 2rem auto;
+    width: 80%;
+}
+
+.vyberepizody h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.vyberepizody table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.vyberepizody table td {
+    padding: 0.5rem;
+    border: 1px solid var(--color-background);
+}
+
+.vyberepizody table a {
+    text-decoration: none;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vyberepizody table a:hover {
+    color: var(--color-color);
+    transform: scale(1.2);
+    background-color: var(--color-block);
+}
+
+footer {
+    background-color: var(--color-block);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .profile {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .image-container {
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile p {
+        font-size: 1.4rem;
+    }
+
+    .movie {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .movieselect .image-container {
+        width: 140px;
+        height: 80px;
+    }
+
+    .movie p {
+        font-size: 1.3rem;
+    }
+
+    .vyberepizody table td {
+        padding: 0.4rem;
+    }
+
+    .vyberepizody table a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .vyberepizody table {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .profile {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile p {
+        font-size: 1rem;
+    }
+
+    .movie {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .movieselect .image-container {
+        width: 100px;
+        height: 56.25px;
+    }
+
+    .movie p {
+        font-size: 1rem;
+    }
+
+    .vyberepizody table td {
+        padding: 0.2rem;
+    }
+
+    .vyberepizody table a {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.3rem;
+    }
+
+    .vyberepizody table {
+        font-size: 0.8rem;
+    }
+
+    .vyberepizody table {
+        display: block;
+    }
+
+    .vyberepizody table td {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.3rem;
+        border: none;
+    }
+
+    .vyberepizody table a {
+        display: inline-block;
+        font-size: 0.6rem;
+        padding: 0.2rem 0.3rem;
+    }
+}
+
