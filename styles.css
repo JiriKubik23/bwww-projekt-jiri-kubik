@@ -22,13 +22,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5vw 4%;
+    padding: 1.5vw 3%;
     background-color: var(--color-block);
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.min {
+    color: var(--color-color);
 }
 
 .nav-left {
@@ -51,19 +55,16 @@ body {
 
 .nav-left a:hover, .nav-right a:hover {
     color: var(--color-color);
-    scale: 1.05;
     transition: 0.2s ease-in, transform 0.3s ease-out;
 }
 
 .nav-right a.logout:hover {
     color: red;
-    scale: 1.05;
     transition: 0.2s ease-in, transform 0.3s ease-out;
 }
 
 .nav-right a.login:hover {
-    color: #00fb00;
-    scale: 1.05;
+    color: lime;
     transition: 0.2s ease-in, transform 0.3s ease-out;
 }
 
@@ -140,7 +141,7 @@ h1.jestemensi {
 }
 
 .searchbar:hover {
-    scale: 1.05;
+    scale: 1.005;
     box-shadow: 0 3px 2px var(--color-color);
     transition: 0.2s ease-in, transform 5s ease-out;
 }
@@ -169,7 +170,7 @@ h1.jestemensi {
     background-color: var(--color-block);
 }
 
-.image-container {
+.profilovyobrazek {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -181,6 +182,7 @@ h1.jestemensi {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 15px;
 }
 
 .profile p {
@@ -210,6 +212,88 @@ h2 {
     padding-top: 3rem;
 }
 
+/*ZACATEK*/
+.zacatek {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.moviebig {
+    flex: 1 1 calc(60% - 1rem);
+    max-width: 700px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.moviesmall {
+    flex: 1 1 calc(25% - 1rem);
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.moviebig:hover, .moviesmall:hover {
+    transform: scale(1.05);
+
+}
+
+.zacatek .image-container {
+    width: 100%;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px auto 0;
+}
+
+.zacatek .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zacatek p {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+
+
+.moviebig:hover p, .moviesmall:hover p {
+    color: var(--color-color);
+}
+
+@media (max-width: 768px) {
+    .zacatek {
+        flex-direction: column;
+    }
+
+    .moviebig, .moviesmall {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.moviebig .image-container {
+    height: 387px;
+}
+
+
+
+
+
+
 /*FILMY*/
 .movieselect {
     display: flex;
@@ -226,13 +310,12 @@ h2 {
     max-width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    border-radius: 35px;
+    border-radius: 15px;
 
 }
 
 .movie:hover {
-    transform: scale(1.2);
-    background-color: var(--color-block);
+    transform: scale(1.1);
 }
 
 .movieselect .image-container {
@@ -340,8 +423,6 @@ h2 {
 
 .vyberepizody table a:hover {
     color: var(--color-color);
-    transform: scale(1.2);
-    background-color: var(--color-block);
 }
 
 footer {
@@ -352,6 +433,10 @@ footer {
     font-family: "Bebas Neue", sans-serif;
     font-size: 1.5rem;
 }
+
+
+
+
 
 
 @media (max-width: 768px) {
